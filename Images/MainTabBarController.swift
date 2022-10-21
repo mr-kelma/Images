@@ -17,8 +17,8 @@ class MainTabBarController: UITabBarController {
         let imagesVC = ImagesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
         viewControllers = [
-            generateNavigationController(rootViewController: imagesVC, title: "Images", image: #imageLiteral(resourceName: "addImages")),
-            generateNavigationController(rootViewController: ViewController(), title: "Favourites", image: #imageLiteral(resourceName: "favourites"))
+            generateNavigationController(rootViewController: imagesVC, title: "Images", image: UIImage(systemName: "photo.on.rectangle.angled")!),
+            generateNavigationController(rootViewController: ViewController(), title: "Favourites", image: UIImage(systemName: "heart.fill")!)
         ]
     }
     
