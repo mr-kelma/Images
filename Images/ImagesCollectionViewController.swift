@@ -9,6 +9,8 @@ import UIKit
 
 class ImagesCollectionViewController: UICollectionViewController {
     
+    //MARK: - Properties
+    
     private lazy var addBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped))
     }()
@@ -17,19 +19,45 @@ class ImagesCollectionViewController: UICollectionViewController {
         return UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(actionBarButtonTapped))
     }()
     
+    //MARK: - Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .orange
         setupCollectionView()
         setupNavigationBar()
         setupSearchBar()
     }
     
+    //MARK: - Setup UI Elements
+    
+    private func setupCollectionView() {
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellId")
+    }
+    
+    private func setupNavigationBar() {
+        let titleLabel = UILabel()
+        titleLabel.text = "IMAGES"
+        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        titleLabel.textColor = .gray
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
+        navigationItem.rightBarButtonItems = [actionBarButtonItem, addBarButtonItem]
+    }
+    
+    private func setupSearchBar() {
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+    }
+    
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return 3
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -47,25 +75,13 @@ class ImagesCollectionViewController: UICollectionViewController {
     @objc private func actionBarButtonTapped() {
         print(#function)
     }
+}
+
+//MARK: - UISearchBarDelegate
+
+extension ImagesCollectionViewController: UISearchBarDelegate {
     
-    //MARK: - Setup UI Elements
-    
-    private func setupCollectionView() {
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellId")
-    }
-    
-    private func setupNavigationBar() {
-        let titleLabel = UILabel()
-        titleLabel.text = "IMAGES"
-        titleLabel.font = UIFont.systemFont(ofSize: 15, weight: .medium)
-        titleLabel.textColor = #colorLiteral(red: 0.5742436647, green: 0.5705327392, blue: 0.5704542994, alpha: 1)
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: titleLabel)
-        
-        navigationItem.rightBarButtonItems = [actionBarButtonItem, addBarButtonItem]
-    }
-    
-    private func setupSearchBar() {
-        let searchController = UISearchController(searchResultsController: nil)
-        navigationItem.searchController = searchController
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(searchText)
     }
 }

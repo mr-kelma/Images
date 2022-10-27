@@ -6,13 +6,16 @@
 //
 
 import UIKit
+import SwiftUI
 
 class MainTabBarController: UITabBarController {
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .gray
+        setupView()
         
         let imagesVC = ImagesCollectionViewController(collectionViewLayout: UICollectionViewFlowLayout())
         
@@ -22,10 +25,41 @@ class MainTabBarController: UITabBarController {
         ]
     }
     
+    //MARK: - Setup views
+    
+    private func setupView() {
+        UINavigationBar.appearance().backgroundColor = .white
+        UINavigationBar.appearance().tintColor = .gray
+        self.tabBar.tintColor = .black
+        self.tabBar.backgroundColor = .white
+    }
+    
     private func generateNavigationController(rootViewController: UIViewController, title: String, image: UIImage) -> UIViewController {
         let navigationVC = UINavigationController(rootViewController: rootViewController)
         navigationVC.tabBarItem.title = title
         navigationVC.tabBarItem.image = image
         return navigationVC
+    }
+}
+
+//MARK: - List Provider
+struct ListProvider: PreviewProvider {
+    static var previews: some View {
+        ContainterView().edgesIgnoringSafeArea(.all)
+    }
+    
+    struct ContainterView: UIViewControllerRepresentable {
+        
+        let listVC = MainTabBarController()
+        
+        func makeUIViewController(context:
+                                  UIViewControllerRepresentableContext<ListProvider.ContainterView>) -> MainTabBarController {
+            return listVC
+        }
+        
+        func updateUIViewController(_ uiViewController:
+                                    ListProvider.ContainterView.UIViewControllerType, context:
+                                    UIViewControllerRepresentableContext<ListProvider.ContainterView>) {
+        }
     }
 }
