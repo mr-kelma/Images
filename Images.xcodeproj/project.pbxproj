@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		701ED89C291CC0FA0007BB63 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701ED89B291CC0FA0007BB63 /* NetworkDataFetcher.swift */; };
 		701ED89E291CC1D60007BB63 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701ED89D291CC1D60007BB63 /* SearchResults.swift */; };
+		701ED8A1291D032C0007BB63 /* ImagesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701ED8A0291D032C0007BB63 /* ImagesCell.swift */; };
 		701F6359290AE42600E3AF95 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701F6358290AE42600E3AF95 /* NetworkService.swift */; };
 		70C58CF92901814B00062A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C58CF82901814B00062A29 /* AppDelegate.swift */; };
 		70C58CFB2901814B00062A29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C58CFA2901814B00062A29 /* SceneDelegate.swift */; };
@@ -23,6 +24,7 @@
 /* Begin PBXFileReference section */
 		701ED89B291CC0FA0007BB63 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
 		701ED89D291CC1D60007BB63 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
+		701ED8A0291D032C0007BB63 /* ImagesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesCell.swift; sourceTree = "<group>"; };
 		701F6358290AE42600E3AF95 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		70C58CF52901814B00062A29 /* Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C58CF82901814B00062A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				70C58D1229018BC000062A29 /* ViewController.swift */,
 				70C58D0C290183C400062A29 /* MainTabBarController.swift */,
 				70C58D1029018AE000062A29 /* ImagesCollectionViewController.swift */,
+				701ED8A0291D032C0007BB63 /* ImagesCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 			files = (
 				701ED89C291CC0FA0007BB63 /* NetworkDataFetcher.swift in Sources */,
 				70C58D1329018BC000062A29 /* ViewController.swift in Sources */,
+				701ED8A1291D032C0007BB63 /* ImagesCell.swift in Sources */,
 				70C58CF92901814B00062A29 /* AppDelegate.swift in Sources */,
 				70C58D0D290183C400062A29 /* MainTabBarController.swift in Sources */,
 				70C58D1129018AE000062A29 /* ImagesCollectionViewController.swift in Sources */,
