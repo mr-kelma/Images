@@ -11,6 +11,8 @@ class ImagesCollectionViewController: UICollectionViewController {
     
     //MARK: - Properties
     
+    var networkService = NetworkService()
+    
     private lazy var addBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped))
     }()
@@ -83,5 +85,8 @@ extension ImagesCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
+        networkService.request(searchTerm: searchText) { (_, _)  in
+            print("123")
+        }
     }
 }

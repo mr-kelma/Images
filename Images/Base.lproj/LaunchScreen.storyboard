@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -28,9 +28,11 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="PSr-uD-zpL" secondAttribute="bottom" id="AeG-tW-WAH"/>
                             <constraint firstItem="PSr-uD-zpL" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="DaP-NU-AvR"/>
+                            <constraint firstItem="fOV-iF-LDr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="LRs-XA-3gR"/>
                             <constraint firstItem="fOV-iF-LDr" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="UDh-sg-gwh"/>
                             <constraint firstItem="fOV-iF-LDr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="VZ7-6E-6vc"/>
                             <constraint firstAttribute="trailing" secondItem="PSr-uD-zpL" secondAttribute="trailing" id="Wck-mB-Z1x"/>
+                            <constraint firstItem="fOV-iF-LDr" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="oHi-eS-rcj"/>
                             <constraint firstItem="PSr-uD-zpL" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="xw7-az-TMl"/>
                         </constraints>
                     </view>
