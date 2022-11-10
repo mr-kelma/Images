@@ -13,7 +13,7 @@ class ImagesCollectionViewController: UICollectionViewController {
     
     var networkDataFetcher = NetworkDataFetcher()
     private var timer: Timer?
-    private var photos = [UnsplachPhoto]()
+    private var images = [UnsplashPhoto]()
     
     private lazy var addBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped))
@@ -38,6 +38,7 @@ class ImagesCollectionViewController: UICollectionViewController {
     
     private func setupCollectionView() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "CellId")
+        collectionView.register(ImagesCell.self, forCellWithReuseIdentifier: ImagesCell.reuseId)
     }
     
     private func setupNavigationBar() {
@@ -61,12 +62,13 @@ class ImagesCollectionViewController: UICollectionViewController {
     //MARK: - UICollectionViewDataSource, UICollectionViewDelegate
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return images.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CellId", for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImagesCell.reuseId, for: indexPath) as! ImagesCell
+        let unsplachPhoto = images[indexPath.item]
+        cell.unsplashPhoto = unsplachPhoto
         return cell
     }
     
@@ -89,10 +91,9 @@ extension ImagesCollectionViewController: UISearchBarDelegate {
         print(searchText)
         
         timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false, block: { (_) in
-            self.networkDataFetcher.fetchImage(searchTerm: searchText) { (searchResults ) in
-                searchResults?.results.map({ (photo) in
-                    print(photo.urls["small"])
-                })
+            self.networkDataFetcher.fetchImage(searchTerm: searchText) { [weak self](searchResults ) in
+                guard let fetchedImages = searchResults else { return }
+                self?.images = fetchedImages.results
             }
         })
     }

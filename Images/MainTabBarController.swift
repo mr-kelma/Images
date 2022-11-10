@@ -41,25 +41,3 @@ class MainTabBarController: UITabBarController {
         return navigationVC
     }
 }
-
-//MARK: - List Provider
-struct ListProvider: PreviewProvider {
-    static var previews: some View {
-        ContainterView().edgesIgnoringSafeArea(.all)
-    }
-    
-    struct ContainterView: UIViewControllerRepresentable {
-        
-        let listVC = MainTabBarController()
-        
-        func makeUIViewController(context:
-                                  UIViewControllerRepresentableContext<ListProvider.ContainterView>) -> MainTabBarController {
-            return listVC
-        }
-        
-        func updateUIViewController(_ uiViewController:
-                                    ListProvider.ContainterView.UIViewControllerType, context:
-                                    UIViewControllerRepresentableContext<ListProvider.ContainterView>) {
-        }
-    }
-}
