@@ -9,8 +9,6 @@ import Foundation
 
 class NetworkService {
     
-    //create a data request using URL
-    
     func request(searchTerm: String, completion: @escaping (Data?, Error?) -> Void) {
         let parameters = self.prepareParametrs(searchTerm: searchTerm)
         let url = self.url(parameters: parameters)

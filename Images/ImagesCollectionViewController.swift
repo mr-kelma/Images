@@ -11,7 +11,8 @@ class ImagesCollectionViewController: UICollectionViewController {
     
     //MARK: - Properties
     
-    var networkService = NetworkService()
+    var networkDataFetcher = NetworkDataFetcher()
+    private var timer: Timer?
     
     private lazy var addBarButtonItem: UIBarButtonItem = {
         return UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addBarButtonTapped))
@@ -85,8 +86,13 @@ extension ImagesCollectionViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        networkService.request(searchTerm: searchText) { (_, _)  in
-            print("123")
-        }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false, block: { (_) in
+            self.networkDataFetcher.fetchImage(searchTerm: searchText) { (searchResults ) in
+                searchResults?.results.map({ (photo) in
+                    print(photo.urls["small"])
+                })
+            }
+        })
     }
 }

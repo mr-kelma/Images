@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		701ED89C291CC0FA0007BB63 /* NetworkDataFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701ED89B291CC0FA0007BB63 /* NetworkDataFetcher.swift */; };
+		701ED89E291CC1D60007BB63 /* SearchResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701ED89D291CC1D60007BB63 /* SearchResults.swift */; };
 		701F6359290AE42600E3AF95 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701F6358290AE42600E3AF95 /* NetworkService.swift */; };
 		70C58CF92901814B00062A29 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C58CF82901814B00062A29 /* AppDelegate.swift */; };
 		70C58CFB2901814B00062A29 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70C58CFA2901814B00062A29 /* SceneDelegate.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		701ED89B291CC0FA0007BB63 /* NetworkDataFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDataFetcher.swift; sourceTree = "<group>"; };
+		701ED89D291CC1D60007BB63 /* SearchResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResults.swift; sourceTree = "<group>"; };
 		701F6358290AE42600E3AF95 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		70C58CF52901814B00062A29 /* Images.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Images.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70C58CF82901814B00062A29 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,9 +70,26 @@
 		701ED899291C045B0007BB63 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				701ED89B291CC0FA0007BB63 /* NetworkDataFetcher.swift */,
 				701F6358290AE42600E3AF95 /* NetworkService.swift */,
+				701ED89F291CC2700007BB63 /* Models */,
 			);
 			name = Service;
+			sourceTree = "<group>";
+		};
+		701ED89A291CC0980007BB63 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		701ED89F291CC2700007BB63 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				701ED89D291CC1D60007BB63 /* SearchResults.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		70C58CEC2901814B00062A29 = {
@@ -92,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				701ED897291A424E0007BB63 /* App */,
+				701ED89A291CC0980007BB63 /* Model */,
 				701ED898291A426A0007BB63 /* Controller */,
 				701ED899291C045B0007BB63 /* Service */,
 				70C58D012901814C00062A29 /* Assets.xcassets */,
@@ -171,11 +193,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				701ED89C291CC0FA0007BB63 /* NetworkDataFetcher.swift in Sources */,
 				70C58D1329018BC000062A29 /* ViewController.swift in Sources */,
 				70C58CF92901814B00062A29 /* AppDelegate.swift in Sources */,
 				70C58D0D290183C400062A29 /* MainTabBarController.swift in Sources */,
 				70C58D1129018AE000062A29 /* ImagesCollectionViewController.swift in Sources */,
 				701F6359290AE42600E3AF95 /* NetworkService.swift in Sources */,
+				701ED89E291CC1D60007BB63 /* SearchResults.swift in Sources */,
 				70C58CFB2901814B00062A29 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
