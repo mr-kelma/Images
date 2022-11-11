@@ -10,9 +10,11 @@ import SDWebImage
 
 class ImagesCell: UICollectionViewCell {
     
+    //MARK: - Properties
+    
     static let reuseId = "ImagesCell"
     
-    private let imageImageView: UIImageView = {
+    let imageImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.backgroundColor = .lightGray
@@ -21,8 +23,9 @@ class ImagesCell: UICollectionViewCell {
     }()
     
     private let checkMark: UIImageView = {
-        let image = UIImage(named: "checkMark")
+        let image = UIImage(systemName: "checkmark")
         let imageView = UIImageView(image: image)
+        imageView.tintColor = .black
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.alpha = 0
         return imageView
